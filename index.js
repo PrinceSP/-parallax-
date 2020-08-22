@@ -4,6 +4,7 @@ let i = {
   y:"",
   z:"",
   t: document.querySelector('.typewriter'),
+  u:document.querySelector('.loading'),
   x: ['. . . .','code','ux design','sports']
 }
 
@@ -12,9 +13,9 @@ function sleep(ms){
 }
 
 (async function effects(){
-  document.querySelector('.loading').classList.add('load');
+  i.u.classList.add('load');
   await sleep(2000);
-  document.querySelector('.loading').classList.remove('load');
+  i.u.classList.remove('load');
   document.querySelector('.block').classList.add('add');
 
   await sleep(1500);
