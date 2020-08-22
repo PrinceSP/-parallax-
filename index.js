@@ -1,10 +1,14 @@
 let i = {
   c:0,
   b:0,
+  e:0,
   y:"",
   z:"",
+  d:"",
+  a:"",
   t: document.querySelector('.typewriter'),
-  u:document.querySelector('.loading'),
+  u: document.querySelector('.loading'),
+  load_text: document.querySelector('.loading-text'),
   x: ['. . . .','code','ux design','sports']
 }
 
@@ -13,6 +17,13 @@ function sleep(ms){
 }
 
 (async function effects(){
+  (function dots(){
+    i.d = i.x[0];
+    i.a = i.d.slice(0,i.e+=2);
+    i.load_text.textContent = i.a;
+    setTimeout(dots,400);
+  }());
+
   i.u.classList.add('load');
   await sleep(2000);
   i.u.classList.remove('load');
@@ -21,7 +32,6 @@ function sleep(ms){
   await sleep(1500);
 
   (async function type(){
-
 
     if (i.c === i.x.length) {
       i.c = 0;
