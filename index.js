@@ -17,7 +17,7 @@ function sleep(ms){
   await sleep(2000);
   i.u.classList.remove('load');
   document.querySelector('.block').classList.add('add');
-
+  i.u.style.display="none";
   await sleep(1500);
 
   (async function type(){
