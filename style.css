@@ -1,0 +1,151 @@
+:root{
+  --main: #0578Fa;
+  --secondary: #b3aEaE;
+  --lightCL: #fff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+.load{
+  width: 100%;
+  height:100vh;
+  background: #0f3464;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #aaa;
+  letter-spacing: 0.3rem;
+  animation: loading-page 1s;
+}
+
+@keyframes loading-page {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1);
+    transition: transform 1s ease-in-out;
+  }
+}
+
+.first{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightgreen;
+  flex-direction: row;
+  background: linear-gradient(to top,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(bg.jpg);
+  background-position: center;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.first .heading{
+  width: auto;
+  height: 140px;
+  position: relative;
+}
+
+.first .heading > h1{
+  font-size: 5.175rem;
+  letter-spacing: 0.4rem;
+  color: var(--lightCL);
+  margin-bottom: 10px;
+}
+
+.add{
+  position: absolute;
+  height: 80px;
+  width: 0;
+  background: #0f3460;
+  top: -1%;
+  right: 0;
+  animation: show 1.5s cubic-bezier(.79,.30,0,1.55);
+}
+
+@keyframes show {
+  0%{
+    width: 530px;
+    transform-origin: right;
+    transition: width .5s;
+  }
+  100%{
+    width: 0;
+    transform-origin: left;
+    transition: widt .5s ease-out;
+  }
+}
+
+.first .heading > h1  > span{
+  color: var(--main);
+  text-transform: uppercase;
+}
+
+.first .heading > p{
+  font-size: 2.375rem;
+  color: var(--secondary);
+  letter-spacing: 0.1rem;
+}
+
+.first .heading > p > .typing-pointer{
+  opacity: .6;
+  animation: toggle 1s ease-in infinite both;
+}
+
+@keyframes toggle {
+  0%{
+    padding: 1px;
+    transition: padding .5s ease-in;
+  }
+  100%{
+    height: 100%;
+    padding: 1px;
+    background: #fff;
+    transition: all .5s ease-in-out;
+  }
+}
+
+.first .scroll-to-see{
+  height: 170px;
+  width: 150px;
+  margin-left: -75px;
+  display: flex;
+  transform: translateY(50px);
+  opacity: 0.8;
+}
+
+.first .scroll-to-see > p{
+  font-size: 1.137rem;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  opacity: 0.5;
+  transform: rotate(-90deg) translateY(120px);
+}
+
+.first .social-icons{
+  height: 200px;
+  width :50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+  transform: translateY(70px);
+}
+
+.first .social-icons > img{
+  height: 40px;
+  width: 40px;
+  margin: auto 0;
+  opacity: 0.5;
+}
