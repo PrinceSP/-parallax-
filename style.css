@@ -11,7 +11,47 @@
 }
 
 html{
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
+}
+
+.loading{
+  position: relative;
+}
+
+.loading > p{
+  z-index: 10;
+}
+
+.loading > svg{
+  position: absolute;
+  top: 36%;
+  left: 40%;
+  opacity: .4;
+  animation: rotation 7s linear infinite;
+}
+
+.loading > svg:nth-of-type(even){
+  left: 53%;
+  animation: rotation2 7s linear infinite;
+}
+
+@keyframes rotation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation2 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
 }
 
 .load{
@@ -22,7 +62,7 @@ html{
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: #aaa;
+  color: #ddd;
   letter-spacing: 0.3rem;
   animation: loading-page 1s;
 }
@@ -62,6 +102,18 @@ html{
   letter-spacing: 0.4rem;
   color: var(--lightCL);
   margin-bottom: 10px;
+  animation: op 4s;
+  transition: transform 1s ease-in-out;
+}
+
+@keyframes op {
+  from{
+    font-size: 0;
+  }
+  to{
+    font-size: 5.175rem;
+    transition: font-size 4s;
+  }
 }
 
 .add{
@@ -93,7 +145,7 @@ html{
 }
 
 .first .heading > p{
-  font-size: 2.375rem;
+  font-size: 2.475rem;
   color: var(--secondary);
   letter-spacing: 0.1rem;
 }
@@ -148,4 +200,11 @@ html{
   width: 40px;
   margin: auto 0;
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.portfolio{
+  height: 100vh;
+  width: 100%;
+  background: olive;
 }
