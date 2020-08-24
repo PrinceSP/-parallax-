@@ -13,6 +13,7 @@
 html{
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .loading{
@@ -108,11 +109,13 @@ html{
 
 @keyframes op {
   from{
-    font-size: 0;
+    font-size: 2rem;
+    margin-bottom: 50px
   }
   to{
     font-size: 5.175rem;
     transition: font-size 4s;
+    margin-bottom: 0;
   }
 }
 
@@ -181,7 +184,7 @@ html{
   font-size: 1.137rem;
   letter-spacing: 0.1rem;
   color: #fff;
-  opacity: 0.5;
+  opacity: 0.2;
   transform: rotate(-90deg) translateY(120px);
 }
 
@@ -204,7 +207,83 @@ html{
 }
 
 .portfolio{
-  height: 100vh;
+  background: #06223B;
+  min-height: 200vh;
   width: 100%;
-  background: olive;
+  display: flex;
+  flex-direction:column;
+  position: relative;
+}
+
+.portfolio > h1{
+  position: absolute;
+  font-size: 3.575rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  margin-top: 50px;
+  right: 2%;
+  color: #737C85;
+  opacity: .3;
+}
+
+.portfolio > img{
+  position: absolute;
+  height: 320px;
+  width: 550px;
+  box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.5),
+  2px 2px 10px #000;
+}
+
+.portfolio > p {
+  position: absolute;
+  border-bottom: 2.5px solid #fff;
+  padding-bottom: 10px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1.575rem;
+  letter-spacing: 4px;
+  z-index: 1;
+}
+
+.portfolio > p:nth-of-type(1){
+  text-transform: uppercase;
+  top: 22%;
+  left: 42%;
+}
+
+.portfolio > p:nth-of-type(2){
+  top: 50%;
+  right: 41%;
+  text-shadow: 0 0 21px #000;
+  border-color: #aeaeae;
+}
+
+.portfolio > p:nth-of-type(3){
+  top: 73%;
+  left: 5%;
+}
+
+.portfolio > img:nth-of-type(odd){
+  top: 8%;
+  left: 10%;
+}
+
+.portfolio > img:nth-of-type(2){
+  right: 13%;
+  top: 35%;
+  width: 450px;
+  height: 300px;
+}
+
+.portfolio > img:nth-of-type(3){
+  height: auto;
+  width: 347px;
+  top: 40%;
+}
+
+.portfolio > img:nth-of-type(4){
+  bottom: 3%;
+  right: 14%;
+  height: 360px;
+  width: 600px;
 }

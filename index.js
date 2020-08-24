@@ -20,12 +20,29 @@ let i = {
     })
   }
 }
+
+let first = document.querySelector('.first');
 let portfolio = document.querySelector('.portfolio');
+
 i.getBtn();
 
 function sleep(ms){
   return new Promise(resolve=> setTimeout(resolve,ms));
 }
+
+class OnOff{
+  onSec(){
+    first.style.display = 'flex';
+    portfolio.style.display = 'flex';
+  }
+
+  offSec(){
+    first.style.display = 'none';
+    portfolio.style.display = 'none';
+  }
+}
+
+let toggleOnOff = new OnOff();
 
 (async function effects(){
   (function dots(){
@@ -40,10 +57,14 @@ function sleep(ms){
       clearTimeout(time)
     }
   }());
-
+  window.addEventListener('load',()=>{
+    window.scrollTo(0,0);
+  })
   i.u.classList.add('load');
+  toggleOnOff.offSec();
   await sleep(2000);
   i.u.classList.remove('load');
+  toggleOnOff.onSec();
   document.querySelector('.block').classList.add('add');
   i.u.style.display="none";
   await sleep(1500);
@@ -76,6 +97,7 @@ function sleep(ms){
   }());
 }());
 
+//add parallax when the user scroll reach the certain point
 window.addEventListener('scroll',()=>{
   if (this.scrollY > portfolio.offsetTop - 300) {
     console.log('scroll to portfolio');
