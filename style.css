@@ -263,6 +263,14 @@ html{
   left: 5%;
 }
 
+.portfolio > p:nth-of-type(4){
+  bottom: 8%;
+  right: 47%;
+  text-shadow: 0 0 10px #000;
+  border-color: #aeaeae;
+
+}
+
 .portfolio > img:nth-of-type(odd){
   top: 8%;
   left: 10%;
