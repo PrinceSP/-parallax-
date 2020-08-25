@@ -23,12 +23,14 @@ let i = {
 
 let first = document.querySelector('.first');
 let portfolio = document.querySelector('.portfolio');
+let img = document.querySelectorAll('.imgs');
 
 i.getBtn();
 
 function sleep(ms){
   return new Promise(resolve=> setTimeout(resolve,ms));
 }
+
 
 class OnOff{
   onSec(){
@@ -99,7 +101,16 @@ let toggleOnOff = new OnOff();
 
 //add parallax when the user scroll reach the certain point
 window.addEventListener('scroll',()=>{
-  if (this.scrollY > portfolio.offsetTop - 300) {
-    console.log('scroll to portfolio');
+  if (this.scrollY > portfolio.offsetTop-300) {
+    img.forEach(item=>{
+      setTimeout(()=>{
+        item.classList.add('show-img');
+        item.style.display = "block";
+        $('.portfolio p').css({
+          'display':'block',
+          'transition':'display 1s ease-in-out'
+        });
+      },1000);
+    })
   }
 })
