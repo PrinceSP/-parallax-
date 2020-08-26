@@ -100,17 +100,23 @@ let toggleOnOff = new OnOff();
 }());
 
 //add parallax when the user scroll reach the certain point
+//landing element parallax
 window.addEventListener('scroll',()=>{
   if (this.scrollY > portfolio.offsetTop-300) {
-    img.forEach(item=>{
+    img.forEach((item,idx,arr)=>{
       setTimeout(()=>{
         item.classList.add('show-img');
-        item.style.display = "block";
         $('.portfolio p').css({
           'display':'block',
           'transition':'display 1s ease-in-out'
         });
-      },1000);
-    })
+      },700);
+    });
+    // $('.portfolio .imgs').each(()=>{
+    //   setTimeout(()=>{
+    //     $('.portfolio .imgs').eq().addClass('show-img');
+    //     console.log(true);
+    //   },2000);
+    // })
   }
 })

@@ -17,6 +17,7 @@ html{
 }
 
 .loading{
+  display: none;
   position: relative;
 }
 
@@ -298,6 +299,7 @@ html{
 }
 
 .show-img{
+  display: block !important;
   animation: img-plx 1s ease-in-out;
 }
 
