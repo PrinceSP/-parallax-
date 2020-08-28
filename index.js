@@ -1,4 +1,4 @@
-let i = {
+let holder = {
   c:0,
   b:0,
   e:0,
@@ -20,12 +20,12 @@ let i = {
     })
   }
 }
-
+let {c,b,e,y,z,d,a,t,h1,u,load_text,img_btn,x} = holder;
 let first = document.querySelector('.first');
 let portfolio = document.querySelector('.portfolio');
 let img = document.querySelectorAll('.imgs');
 
-i.getBtn();
+holder.getBtn();
 
 function sleep(ms){
   return new Promise(resolve=> setTimeout(resolve,ms));
@@ -48,13 +48,13 @@ let toggleOnOff = new OnOff();
 
 (async function effects(){
   (function dots(){
-    i.d = i.x[0];
-    i.a = i.d.slice(0,i.e+=2);
-    i.load_text.textContent = i.a;
+    d = x[0];
+    a = d.slice(0,e+=2);
+    load_text.textContent = a;
     console.log('still running');
     let time = setTimeout(dots,300);
 
-    if (i.a.length === i.d.length) {
+    if (a.length === d.length) {
       console.log('timeout stopped');
       clearTimeout(time)
     }
@@ -62,38 +62,38 @@ let toggleOnOff = new OnOff();
   window.addEventListener('load',()=>{
     window.scrollTo(0,0);
   })
-  i.u.classList.add('load');
+  u.classList.add('load');
   toggleOnOff.offSec();
   await sleep(2000);
-  i.u.classList.remove('load');
+  u.classList.remove('load');
   toggleOnOff.onSec();
   document.querySelector('.block').classList.add('add');
-  i.u.style.display="none";
+  u.style.display="none";
   await sleep(1500);
 
   (async function type(){
 
-    if (i.c === i.x.length) {
-      i.c = 0
+    if (c === x.length) {
+      c = 0
     }
 
-    i.y = i.x[i.c];
+    y = x[c];
 
-    i.z = i.y.slice(0,i.b++).toUpperCase();
+    z = y.slice(0,b++).toUpperCase();
 
-    i.t.style.color = "#fff";
-    i.t.textContent=i.z;
+    t.style.color = "#fff";
+    t.textContent=z;
 
-    if (i.z.length===i.y.length) {
+    if (z.length===y.length) {
 
-      if (i.y==i.x[0]) {
+      if (y==x[0]) {
         //this 'await' keyword used to pauses the current async function for 1 seconds then run again the function after it
         await sleep(1500);
       }
       await sleep(500);
 
-      i.c++;
-      i.b=0;
+      c++;
+      b=0;
     }
     setTimeout(type,300);
   }());
